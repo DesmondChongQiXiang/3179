@@ -5,7 +5,7 @@
     "height": 400,
     "projection": {"type": "equalEarth"},
     "data": {
-      "url": "ne_1.topojson", 
+      "url": "ne_1.json", 
       "format": {
         "type": "topojson",
         "feature": "ne_10m_admin_1_states_provinces" 
