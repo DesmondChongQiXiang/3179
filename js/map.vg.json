@@ -1,0 +1,46 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Mean Household Income by State in Malaysia (2022)",
+    "width": 800,
+    "height": 400,
+    "projection": {"type": "equalEarth"},
+    "data": {
+      "url": "ne_1.topojson", 
+      "format": {
+        "type": "topojson",
+        "feature": "ne_10m_admin_1_states_provinces" 
+      }
+    },
+    "transform": [
+      {
+        "lookup": "properties.name",  
+        "from": {
+          "data": {
+            "url": "hh_income_state.csv" 
+          },
+          "key": "state",
+          "fields": ["income_mean"]  
+        }
+      },
+      {
+        "filter": {
+          "field": "date", 
+          "equal": "2022-01-01"
+        }
+      }
+    ],
+    "mark": {"type": "geoshape"},
+    "encoding": {
+      "color": {
+        "field": "income_mean",  
+        "type": "quantitative",
+        "scale": {
+          "type": "threshold",
+          "domain": [2000, 4000, 6000, 8000],  
+          "range": ["#f7fbff", "#deebf7", "#9ecae1", "#3182bd"]  
+        },
+        "title": "Mean Income (RM)"
+      }
+    }
+  }
+  
