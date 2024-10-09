@@ -1,38 +1,33 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Carbon Emissions Around the World (2022)",
+  "title": "CO2 Emissions by Sector Over Time (World)",
   "data": {
-    "url": "data/combined_co2_continents_2022.csv",  
+    "url": "data/world_emissions_by_sector.csv",
     "format": {"type": "csv"}
   },
-  "mark": {
-    "type": "circle",
-    "tooltip": true
-  },
+  "mark": "area",
   "encoding": {
-    "size": {
-      "field": "Annual CO₂ emissions",
-      "type": "quantitative",
-      "scale": {"range": [10, 1000]},
-      "title": "Annual CO₂ Emissions"
-    },
-    "color": {
-      "field": "region",
-      "type": "nominal",
-      "title": "Region",
-      "scale": {
-        "domain": ["Africa", "Americas", "Asia", "Europe", "Oceania"],
-        "range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"] 
-      }
-    },
     "x": {
-      "field": "Annual CO₂ emissions", 
-      "type": "quantitative"
+      "field": "Year",
+      "type": "temporal",
+      "title": "Year"
     },
     "y": {
-      "field": "Entity",
-      "type": "nominal"
-    }
+      "aggregate": "sum", 
+      "field": "Emissions",
+      "type": "quantitative",
+      "title": "CO2 Emissions"
+    },
+    "color": {
+      "field": "Sector",
+      "type": "nominal",
+      "title": "Sector"
+    },
+    "tooltip": [
+      {"field": "Year", "type": "temporal"},
+      {"field": "Sector", "type": "nominal"},
+      {"field": "Emissions", "type": "quantitative"}
+    ]
   },
   "config": {
     "mark": {

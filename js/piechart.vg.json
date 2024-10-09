@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Annual CO₂ Emissions by Continent (2022)",
+    "data": {
+      "url": "data/grouped_co2_emissions_by_continents.csv", 
+      "format": {"type": "csv"}
+    },
+    "mark": "arc",
+    "encoding": {
+      "theta": {
+        "field": "Annual CO₂ emissions",
+        "type": "quantitative",
+        "title": "Annual CO₂ Emissions"
+      },
+      "color": {
+        "field": "Continent", 
+        "type": "nominal",
+        "title": "Continent",
+        "scale": {
+          "domain": ["Africa", "Asia", "Europe", "North America", "Oceania", "South America"],
+          "range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b"] 
+        }
+      },
+      "tooltip": [
+        {"field": "Continent", "type": "nominal", "title": "Continent"},
+        {"field": "Annual CO₂ emissions", "type": "quantitative", "title": "Emissions"}
+      ]
+    },
+    "view": {
+      "stroke": "transparent" 
+    },
+    "config": {
+      "arc": {
+        "cornerRadius": 5
+      }
+    }
+  }
+  

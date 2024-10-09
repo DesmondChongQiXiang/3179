@@ -13,20 +13,22 @@
 </head>
 <body>
   
-<div id="map"></div>
+<div id="choropleth-map"></div>
 <div id="line-chart"></div>
 <div id="stacked-area-chart"></div>
 <div id="scatterplot"></div>
-<div id="packed-bubble-chart"></div>
+<div id="piechart"></div>
+<div id="treemap"></div>
 
 <script type="text/javascript">
 
-  var spec1 = "js/map.vg.json";
+  var spec1 = "js/choropleth_map.vg.json";
   var spec2 = "js/line_chart.vg.json";
   var spec3 = "js/stacked_area_chart.vg.json";
   var spec4 = 'js/scatterplot.vg.json';
-  var spec5 = 'js/packed_bubble_chart.vg.json'
-  vegaEmbed('#map', spec1).then(function(result) {
+  var spec5 = 'js/piechart.vg.json'
+  var spec6 = 'js/treemap.vg.json'
+  vegaEmbed('#choropleth-map', spec1).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
@@ -42,7 +44,11 @@
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
-  vegaEmbed('#packed-bubble-chart', spec5).then(function(result) {
+  vegaEmbed('#piechart', spec5).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#treemap', spec6).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
