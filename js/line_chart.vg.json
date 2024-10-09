@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "CO2 Emissions Trends Over Time (World)",
+    "width": 800,
+    "height": 400,
+    "data": {
+      "url": "../data/annual-co2-emissions-per-country.csv",
+      "format": {"type": "csv"}
+    },
+    "transform": [
+      {
+        "filter": "datum.Entity === 'World'"
+      }
+    ],
+    "mark": "line",
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "ordinal",
+        "title": "Year"
+      },
+      "y": {
+        "field": "Annual CO₂ emissions",
+        "type": "quantitative",
+        "title": "CO2 Emissions (Metric Tons)"
+      },
+      "tooltip": [
+        {"field": "Year", "type": "ordinal"},
+        {"field": "Annual CO₂ emissions", "type": "quantitative"}
+      ]
+    }
+  }
+  

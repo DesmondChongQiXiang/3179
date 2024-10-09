@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "CO2 Emissions vs Global Mean Temperature",
+    "data": {
+      "url": "data/merged_co2_temp_data.csv",  
+      "format": {"type": "csv"}
+    },
+    "mark": "point",
+    "encoding": {
+      "x": {
+        "field": "Annual CO₂ emissions",
+        "type": "quantitative",
+        "title": "CO2 Emissions (Metric Tons)"
+      },
+      "y": {
+        "field": "Lowess(5)",
+        "type": "quantitative",
+        "title": "Global Mean Temperature (°C)"
+      },
+      "color": {
+        "field": "Year",
+        "type": "temporal",
+        "title": "Year"
+      },
+      "tooltip": [
+        {"field": "Year", "type": "temporal"},
+        {"field": "Annual CO₂ emissions", "type": "quantitative"},
+        {"field": "Lowess(5)", "type": "quantitative"}
+      ]
+    }
+  }
+  

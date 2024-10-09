@@ -1,0 +1,41 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Annual CO₂ Emissions by Country (2022)",
+    "data": {
+      "url": "data/combined_co2_continents_2022.csv",
+      "format": {"type": "csv"}
+    },
+    "mark": {
+      "type": "circle",
+      "tooltip": true
+    },
+    "encoding": {
+      "x": {
+        "field": "Annual CO₂ emissions",
+        "type": "quantitative",
+        "title": "Annual CO₂ Emissions"
+      },
+      "y": {
+        "field": "Entity",
+        "type": "nominal",
+        "title": "Country"
+      },
+      "size": {
+        "field": "Annual CO₂ emissions",
+        "type": "quantitative",
+        "title": "Size of Bubble"
+      },
+      "color": {
+        "field": "region",
+        "type": "nominal",
+        "title": "Region"
+      }
+    },
+    "config": {
+      "mark": {
+        "stroke": "black",
+        "strokeWidth": 0.5
+      }
+    }
+  }
+  

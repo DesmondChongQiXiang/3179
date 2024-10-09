@@ -14,14 +14,37 @@
 <body>
   
 <div id="map"></div>
+<div id="line-chart"></div>
+<div id="stacked-area-chart"></div>
+<div id="scatterplot"></div>
+<div id="packed-bubble-chart"></div>
 
 <script type="text/javascript">
 
-  var spec2 = "js/map.vg.json";
-  vegaEmbed('#map', spec2).then(function(result) {
+  var spec1 = "js/map.vg.json";
+  var spec2 = "js/line_chart.vg.json";
+  var spec3 = "js/stacked_area_chart.vg.json";
+  var spec4 = 'js/scatterplot.vg.json';
+  var spec5 = 'js/packed_bubble_chart.vg.json'
+  vegaEmbed('#map', spec1).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#line-chart', spec2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#stacked-area-chart', spec3).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#scatterplot', spec4).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#packed-bubble-chart', spec5).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
-
 </body>
 </html>
