@@ -1,6 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Annual CO₂ Emissions by Continent (2022)",
+    "width": "container",
     "data": {
       "url": "data/grouped_co2_emissions_by_continents.csv", 
       "format": {"type": "csv"}

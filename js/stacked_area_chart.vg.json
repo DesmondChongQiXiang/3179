@@ -1,10 +1,48 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "CO2 Emissions by Sector Over Time (World)",
+  "width": "container",
   "data": {
     "url": "data/world_emissions_by_sector.csv",
     "format": {"type": "csv"}
   },
+  "params":[
+    {
+      "name": "Sector_selection",
+      "bind":{
+        "input":"select",
+        "options":[
+          null,
+          "Buildings",
+          "Bunker Fuels",
+          "Electricity & Heat",
+          "Industry",
+          "Land Use",
+          "Other Fuels",
+          "Transport",
+          "Manufacturing",
+          "Fugitive Emissions"
+        ],
+        "labels":[
+          "Show All",
+          "Buildings",
+          "Bunker Fuels",
+          "Electricity & Heat",
+          "Industry",
+          "Land Use",
+          "Other Fuels",
+          "Transport",
+          "Manufacturing",
+          "Fugitive Emissions"
+        ],
+        "name":"Sector Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "Sector_selection == null || datum.Sector == Sector_selection"}
+  ],
   "mark": "area",
   "encoding": {
     "x": {

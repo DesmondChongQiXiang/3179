@@ -1,0 +1,20 @@
+.vis-container {
+    width: 100%;
+}
+
+.graph-text {
+    font-size: 11px;
+    padding:50px;
+}
+
+body {
+    background-color: lightgray;
+  }
+
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    text-align: center;
+}

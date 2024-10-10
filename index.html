@@ -1,24 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Global CO₂ Emissions</title>
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
   
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+
   <!-- CSS file -->
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 
 
 </head>
+
 <body>
   
-<div id="choropleth-map"></div>
-<div id="line-chart"></div>
-<div id="stacked-area-chart"></div>
-<div id="scatterplot"></div>
-<div id="piechart"></div>
-<div id="treemap"></div>
+  <div class="page"> 
+
+  <!--Title and subtitle-->
+  <div class="pure-g">
+    <div class="pure-u-1-1">
+      <h1>Global CO₂ Emissions: A Comprehensive Overview</h1>
+      <p>In 2022, global carbon dioxide emissions reached the highest levels on record since 1900, driven by the resurgence of air travel post-pandemic and an increasing reliance on coal as an affordable energy source in many cities.</p>
+    </div>
+  </div>
+
+  <div class="pure-g">
+    <div class="pure-u-1-1">
+      <div id="choropleth-map" class="vis-container"></div>
+    </div>
+  </div>
+
+  <div class="pure-g">
+    <div class="pure-u-1-3">
+      <p class="graph-text">The graph depicts CO₂ emissions from 1750 to 2022, showing a significant increase since the industrial revolution. Initially stable, emissions rose sharply due to industrialization and major global events. Despite fluctuations, global CO₂ emissions remain at record levels, highlighting the urgent need for effective climate policies.</p>
+    </div>
+      
+    <div class="pure-u-2-3">
+      <div id="line-chart" class="vis-container"></div>
+    </div>
+  </div>
+
+  <div class="pure-g">
+    <div class="pure-u-2-3">
+      <div id="stacked-area-chart" class="vis-container"></div>
+    </div>
+
+    <div class="pure-u-1-3">
+      <p class="graph-text">The graph "CO2 Emissions by Sector Over Time (World)" depicts the trends in carbon dioxide emissions across various sectors from 1990 to 2020. The data shows that the Electricity & Heat sector is the largest contributor to emissions, followed by Transport and Industry, highlighting the ongoing reliance on fossil fuels for energy and transportation. A significant increase in emissions begins around 2000, particularly in the Electricity & Heat sector, indicating rising global energy demands. Other sectors, such as Buildings and Fugitive Emissions, show smaller, steady increases, while Land Use emissions fluctuate, reflecting changes in land management. This visualization underscores the urgent need for targeted policies in high-emission sectors to mitigate climate change and promote sustainable energy practices.</p>
+    </div>
+  </div>
+
+  <div class="pure-g">
+    <div class="pure-u-1-3">
+      <p class="graph-text">The scatter plot titled "CO2 Emissions vs Global Mean Temperature" illustrates the relationship between global carbon dioxide emissions (measured in metric tons) and the global mean temperature (in degrees Celsius). As CO2 emissions increase, the plot reveals a corresponding rise in global temperatures, especially noticeable from around 20 billion metric tons of emissions onwards. The data suggests a positive correlation between these two variables, indicating that higher emissions are associated with increased temperatures. The visualization underscores the potential impact of carbon emissions on climate change and the urgency for reducing these emissions to mitigate further temperature increases.</p>
+    </div>
+      
+    <div class="pure-u-2-3">
+      <div id="scatterplot" class="vis-container"></div>
+    </div>
+  </div>
+
+  <div class="pure-g">
+    <div class="pure-u-2-3">
+      <div id="piechart" class="vis-container"></div>
+    </div>
+
+    <div class="pure-u-1-3">
+      <p class="graph-text">The pie chart titled "Annual CO₂ Emissions by Continent (2022)" displays the distribution of CO₂ emissions across continents for the year 2022. Each segment illustrates the proportion of emissions attributed to each continent, with Asia having the largest share, indicating a significant contribution to global carbon output, while Oceania occupies the smallest segment. This visualization highlights disparities in emissions among continents and underscores the need for targeted environmental policies based on geographic emissions profiles.</p>
+    </div>
+  </div>
+
+</div>
 
 <script type="text/javascript">
 
@@ -27,7 +83,6 @@
   var spec3 = "js/stacked_area_chart.vg.json";
   var spec4 = 'js/scatterplot.vg.json';
   var spec5 = 'js/piechart.vg.json'
-  var spec6 = 'js/treemap.vg.json'
   vegaEmbed('#choropleth-map', spec1).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
@@ -47,10 +102,7 @@
   vegaEmbed('#piechart', spec5).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
-
-  vegaEmbed('#treemap', spec6).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
 </script>
+
 </body>
 </html>

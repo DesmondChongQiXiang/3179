@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Global CO2 emission(2021)",
-  "width": 800,
-  "height": 400,
+  "title": "Global CO₂ Emission (2021)",
+  "width": "container",
+  "height": 300,
   "projection": {"type": "equalEarth"},
   "data": {
     "url": "js/ne_110m_admin_0_countries.topojson",
@@ -24,7 +24,11 @@
   "encoding": {
     "color": {
       "field": "Per Capita",
-      "type": "quantitative"
+      "type": "quantitative",
+      "scale": {
+        "domain": [0, 5, 10, 20, 30, 35], 
+        "range": ["#ffffcc", "#c7e9b4", "#7fcdbb", "#41b6c4", "#2c7fb8", "#253494"] 
+      }
     },
     "tooltip": [
       {"field": "properties.NAME", "type": "nominal", "title": "Country"},
