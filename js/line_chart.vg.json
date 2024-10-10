@@ -3,7 +3,7 @@
   "title": "CO₂ Emissions Trends Over Time (World)",
   "width": "container",
   "data": {
-    "url": "../data/annual-co2-emissions-per-country.csv",
+    "url": "data/annual-co2-emissions-per-country.csv",
     "format": {"type": "csv"}
   },
   "transform": [
