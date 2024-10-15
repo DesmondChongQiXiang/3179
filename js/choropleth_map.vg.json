@@ -13,7 +13,7 @@
     },
     {
       "data": {
-        "url": "js/ne_10m_ocean.json",
+        "url": "js/ne_10m_ocean.topojson",
         "format": {"type": "topojson", "feature": "ne_10m_ocean"}
       },
       "mark": {"type": "geoshape", "fill": "#23b3f547"}
