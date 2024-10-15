@@ -6,6 +6,10 @@ h1 {
     font-weight: 900;
 }
 
+h2{
+    font-size: 18px;
+}
+
 body {
     background-color: lightgray;
 }
@@ -22,9 +26,8 @@ body {
     width: 100%;
 }
 
-.description h2,
-h1 {
-    margin-top: 0px;
+.description {
+    margin-top: 35px;
 }
 
 .description-right {
@@ -37,8 +40,4 @@ h1 {
 
 .pure-g {
     margin-bottom: 40px;
-}
-
-.small-font {
-    font-size: 14px;
 }

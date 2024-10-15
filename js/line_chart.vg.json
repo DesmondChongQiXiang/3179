@@ -2,6 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "CO₂ Emissions Trends Over Time (World)",
   "width": "container",
+  "height":300,
   "data": {
     "url": "data/annual-co2-emissions-per-country.csv",
     "format": {"type": "csv"}
@@ -25,7 +26,10 @@
     "y": {
       "field": "Annual CO₂ emissions",
       "type": "quantitative",
-      "title": "CO₂ Emissions (Metric Tons)"
+      "title": "CO₂ Emissions (Metric Tons)",
+      "axis": {
+        "format": ".2s"
+      }
     },
     "tooltip": [
       {"field": "Year", "type": "temporal"},
