@@ -29,7 +29,7 @@
           "lookup": "properties.ISO_A3",
           "from": {
             "data": {
-              "url": "data/filtered_co2_emissions_2021.csv"
+              "url": "data/co2_emissions_per_country_2021.csv"
             },
             "key": "ISO 3166-1 alpha-3",
             "fields": ["Per Capita"]

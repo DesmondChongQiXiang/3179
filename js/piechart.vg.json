@@ -4,7 +4,7 @@
   "width": "container",
   "height":300,
   "data": {
-    "url": "data/grouped_co2_emissions_by_continents.csv", 
+    "url": "data/co2_emissions_by_continents.csv", 
     "format": {"type": "csv"}
   },
   "mark": "arc",

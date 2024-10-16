@@ -4,7 +4,7 @@
     "width": "container",
     "height":300,
     "data": {
-      "url": "data/merged_co2_temp_data.csv",  
+      "url": "data/co2_temp_data.csv",  
       "format": {"type": "csv"}
     },
     "mark": "point",
